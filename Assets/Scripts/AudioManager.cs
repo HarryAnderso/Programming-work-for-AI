@@ -1,36 +1,38 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    private static AudioManager instance;
 
-    public static AudioManager Instance {  get { return instance; } }
+    
+//    private static AudioManager instance;
 
-    private AudioSource audiosource;
+//    public static AudioManager Instance {  get { return instance; } }
 
-    private void Awake()
-    {
-        instance = FindFirstObjectByType<AudioManager>();
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+//    private AudioSource audiosource;
 
-    private void Start()
-    {
-        audiosource = GetComponent<AudioSource>();
-    }
+//    private void Awake()
+//    {
+//        instance = FindFirstObjectByType<AudioManager>();
+//        if(instance == null)
+//        {
+//            instance = this;
+//            DontDestroyOnLoad(gameObject);
+//        }
+//        else
+//        {
+//            Destroy(gameObject);
+//        }
+//    }
 
-    public void PlayOnShot(AudioClip clip)
-    {
-        audiosource.PlayOneShot(clip);
-    }
+//    private void Start()
+//    {
+//        audiosource = GetComponent<AudioSource>();
+//    }
+
+//    public void PlayOnShot(AudioClip clip)
+//    {
+//        audiosource.PlayOneShot(clip);
+//    }
 }
 
 
